@@ -10,40 +10,47 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="jumbotron">
+    <div id="scoreDiv"></div>
+    <div class="timer"></div>
+    <div  class="jumbotron startPage" >
         <h1 class="display-4">Hello, world!</h1>
         <hr class="my-4">
         <p>Are you ready to start this code quiz? Don't forget to be speedy, clocks ticking!</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Start!</a>
+        <a class="btn btn-primary btn-lg startBtn" href="#" role="button">Start!</a>
         
     </div>
-    <div class="jumbotron">
+    <div id="questionOne"class="jumbotron" style="display:none">
         <h1 class="display-4">Question 1</h1>
         <hr class="my-4">
         <p>Are you ready to start this code quiz? Don't forget to be speedy, clocks ticking!</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">HTML</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JavaScript</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JQuery</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">CSS</a>
+        <a class="btn btn-primary btn-lg choiceA" href="#" role="button">HTML</a>
+        <a class="btn btn-primary btn-lg choiceB" href="#" role="button">JavaScript</a>
+        <a class="btn btn-primary btn-lg choiceC" href="#" role="button">JQuery</a>
+        <a class="btn btn-primary btn-lg choiceD" href="#" role="button">CSS</a>
     </div>
-    <div class="jumbotron">
+    <div id="questionTwo" class="jumbotron" style="display:none">
         <h2 class="display-4">Question 2</h2>
         <hr class="my-4">
         <p>Are you ready to start this code quiz? Don't forget to be speedy, clocks ticking!</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">HTML</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JavaScript</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JQuery</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">CSS</a>
+        <a class="btn btn-primary btn-lg choiceA" href="#" role="button">HTML</a>
+        <a class="btn btn-primary btn-lg choiceB" href="#" role="button">JavaScript</a>
+        <a class="btn btn-primary btn-lg choiceC" href="#" role="button">JQuery</a>
+        <a class="btn btn-primary btn-lg choiceD" href="#" role="button">CSS</a>
     </div>
-    <div class="jumbotron">
+    <div id="questionThree" class="jumbotron" style="display:none">
         <h1 class="display-4">Question 3</h1>
         <hr class="my-4">
         <p>Are you ready to start this code quiz? Don't forget to be speedy, clocks ticking!</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">HTML</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JavaScript</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">JQuery</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">CSS</a>
+        <a class="btn btn-primary btn-lg choiceA" href="#" role="button">HTML</a>
+        <a class="btn btn-primary btn-lg choiceB" href="#" role="button">JavaScript</a>
+        <a class="btn btn-primary btn-lg choiceC" href="#" role="button">JQuery</a>
+        <a class="btn btn-primary btn-lg choiceD" href="#" role="button">CSS</a>
     </div>
+<div style="display:none" class="highScores">
+    <h1>High Scores</h1>
+    <ol class="list"></ol>
+</div>
 
+<script src="script.js" />
 </body>
 </html>

@@ -1,5 +1,6 @@
 
-// global variables referencing my tags and ids in html
+
+
 // create an object for my questions (maybe four separate objects?)
 // create the timer and have it  add subtract based on answers
 //create an onclick event for start quiz that starts the timer
@@ -12,14 +13,61 @@
 
 
 
+// global variables referencing my tags and ids in html
+var startBtn = document.querySelector(".startBtn")// start button access
+var startPage = document.querySelector(".startPage")
+var questionOne = document.querySelector("#questionOne")
+var questionTwo = document.querySelector("#questionTwo")
+var questionThree = document.querySelector("#questionThree")
+var choiceA = document.querySelectorAll(".choiceA")// all A choices
+var choiceB = document.querySelectorAll(".choiceB")// all B choices
+var choiceC = document.querySelectorAll(".choiceC")// all C choices
+var choiceD = document.querySelectorAll(".choiceD")// all D choices
+var score = 0
+var time = 60
+var timer = document.getElementsByClassName("timer")
 
 
+//creating key value pars for an allChoices variable
+// var allChoices [
+//     choiceA:choiceA 
+//     choiceB:choiceB
+//     choiceC:choiceC
+//     choiceD:choiceD
+// ]
+
+//Click event for start button
+startBtn.addEventListener("click", function() {
+    startPage.style.display = "none"
+    questionOne.style.display = "block"
+    setTime()
+    scoreDiv.textContent = `Score: ${score}`
+})
+//timer function
+function setTime(){
+    var timeInterval = setInterval(function() {
+    time--;
+    timer.textContent = `Time Left: ${time}`   
+    if(time < 1){
+        clearInterval(timeInterval)
+        endOfGame()
+    }
+}, 1000);
+}
+
+function endOfGame(){
+// set all divs style display = none
+//set highscore div to show
+// all divs hide timer and score
+//store the score in local storage and then return it to page 
+}
 
 
+//for each question have the same eventlistener
+//determine if correct button was pushed if yes ++score
+// to determine if button.textContent === choiceA 
 
-
-
-
+// take time away if not right answer time--
 
 
 
@@ -45,24 +93,24 @@
 // ```
 // GIVEN I am taking a code quiz
 
-    // WHEN I click the start button
-    Need a start quiz page with a button
-// THEN a timer starts and I am presented with a question
-    create a timer that counts down from 6000ms
-// WHEN I answer a question
-// THEN I am presented with another question
-button should switch the pages onclick command
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-onclick function subtract time 
-// WHEN all questions are answered or the timer reaches 0
-if clock === 0 end 
-if all questions answered end game
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
-save initials and score
-// ```
+//    // WHEN I click the start button
+//     Need a start quiz page with a button
+// // THEN a timer starts and I am presented with a question
+//     create a timer that counts down from 6000ms
+// // WHEN I answer a question
+// // THEN I am presented with another question
+// button should switch the pages onclick command
+// // WHEN I answer a question incorrectly
+// // THEN time is subtracted from the clock
+// onclick function subtract time 
+// // WHEN all questions are answered or the timer reaches 0
+// if clock === 0 end 
+// if all questions answered end game
+// // THEN the game is over
+// // WHEN the game is over
+// // THEN I can save my initials and score
+// save initials and score
+// // ```
 
 // The following animation demonstrates the application functionality:
 
