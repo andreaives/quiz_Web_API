@@ -54,6 +54,23 @@ function setTime(){
     }
 }, 1000);
 }
+var questions = {
+    question:
+    answers:
+
+}
+//get the current question indesx and displays question and answers on the scrre
+function displayQuestion(){
+    //this might be in my start
+    
+    //loopthrough the answers
+// pull object through the array
+} /
+
+//put an event listener for any button clicked
+//listener should also see if button was correct or not
+// if yes score++ 
+//if no time--
 
 function endOfGame(){
 // set all divs style display = none
@@ -62,12 +79,6 @@ function endOfGame(){
 //store the score in local storage and then return it to page 
 }
 
-
-//for each question have the same eventlistener
-//determine if correct button was pushed if yes ++score
-// to determine if button.textContent === choiceA 
-
-// take time away if not right answer time--
 
 
 
