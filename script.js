@@ -1,3 +1,33 @@
+
+// global variables referencing my tags and ids in html
+// create an object for my questions (maybe four separate objects?)
+// create the timer and have it  add subtract based on answers
+//create an onclick event for start quiz that starts the timer
+// create on-click events of the questions
+//creat functions to loop through the questions
+//create functions to add subtract points
+// store and display score
+// have a form for user to enter initials and score value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // # 04 Web APIs: Code Quiz
 
 // As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
