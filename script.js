@@ -1,20 +1,26 @@
 
 
 // global variables referencing my tags and ids in html
-var startBtn = document.querySelector("#startBtn")// start button access
-var startPage = document.querySelector(".startPage") //page tag
-var questionDiv = document.querySelector("#questionDiv")
-var 
-// var questionTwo = document.querySelector("#questionTwo")
-// var questionThree = document.querySelector("#questionThree")
-var score = 0
-var time = 60
-var timer = document.querySelector("#timer")
-currentQuestion = O;
+var startBtn = document.querySelector("#startBtn");// start button access
+var startPage = document.querySelector(".startPage"); //page tag
+var toHidden = document.getElementById("#toHidden");
+var questionDiv = document.querySelector("#questionDiv");
+var questions = document.getElementById("#questions");
+var answers = document.getElementById("#answer");
+var userAnswers = document.getElementById("#userAnswers");
+var endGame = document.getElementById("#end-game");
+var initials = document.getElementById("#initials");
+var finalScore = document.getElementById("final-score")
+var endScreen = document.getElementById("#end-screen")
+var score = 0;
+var time = 60;
+var timer = document.querySelector("#timer");
+currentQuestion = 0;
 
 
 
-var questions = [
+//Create questions, answers, & correct answer
+var questionArr = [
  {
     question: "Place holder text",
     answer:["HTML", "JavaScript", "CSS" ],
@@ -22,7 +28,7 @@ var questions = [
  }, {
     question: "What language do you use to ",
     answer:["HTML", "JavaScript", "CSS" ],
-    corrAnswer: "Javasript",
+    corrAnswer: "JavaScript",
  }, {
     question: "What language do you use to style?",
     answer:["HTML", "JavaScript", "CSS" ],
@@ -33,10 +39,11 @@ var questions = [
 //Click event for start button
 startBtn.addEventListener("click", function() {
     startPage.style.display = "none"
-    questionsDiv.style.display = "block"
+    questionDiv.style.display = "block"
     setTime()
     scoreDiv.textContent = `Score: ${score}`
 })
+
 //timer function
 function setTime(){
     var timeInterval = setInterval(function() {
@@ -48,12 +55,8 @@ function setTime(){
     }
 }, 1000);
 }
-var questions = {
-    question:
-    answers:
 
-}
-//get the current question indesx and displays question and answers on the scrre
+//get the current question index and displays question and answers on the scrre
 function displayQuestion(){
     //this might be in my start
     
@@ -78,8 +81,14 @@ function answerWrong(){
     questionIndx++
     displayQuestion()
 }
+//setting all divs to display none;
 function endOfGame(){
-// set all divs style display = none
+    startPage.style.display = "none"
+    questionDiv.style.display = "none"
+
+
+
+
 //set highscore div to show
 // all divs hide timer and score
 //store the score in local storage and then return it to page 
@@ -110,33 +119,21 @@ function endOfGame(){
 // ```
 // GIVEN I am taking a code quiz
 
-//    // WHEN I click the start button
+   // WHEN I click the start button
 //     Need a start quiz page with a button
-// // THEN a timer starts and I am presented with a question
+// THEN a timer starts and I am presented with a question
 //     create a timer that counts down from 6000ms
-// // WHEN I answer a question
-// // THEN I am presented with another question
+// WHEN I answer a question
+// THEN I am presented with another question
 // button should switch the pages onclick command
-// // WHEN I answer a question incorrectly
-// // THEN time is subtracted from the clock
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
 // onclick function subtract time 
-// // WHEN all questions are answered or the timer reaches 0
+// WHEN all questions are answered or the timer reaches 0
 // if clock === 0 end 
 // if all questions answered end game
-// // THEN the game is over
-// // WHEN the game is over
-// // THEN I can save my initials and score
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and score
 // save initials and score
-// // ```
-
-// The following animation demonstrates the application functionality:
-
-// ![code quiz](./Assets/04-web-apis-homework-demo.gif)
-
-// ### Review
-
-// You are required to submit the following for review:
-
-// * The URL of the functional, deployed application.
-
-// * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+// ```
