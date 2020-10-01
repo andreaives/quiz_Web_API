@@ -1,45 +1,39 @@
 
 
-
-// create an object for my questions (maybe four separate objects?)
-// create the timer and have it  add subtract based on answers
-//create an onclick event for start quiz that starts the timer
-// create on-click events of the questions
-//creat functions to loop through the questions
-//create functions to add subtract points
-// store and display score
-// have a form for user to enter initials and score value
-
-
-
-
 // global variables referencing my tags and ids in html
-var startBtn = document.querySelector(".startBtn")// start button access
-var startPage = document.querySelector(".startPage")
-var questionOne = document.querySelector("#questionOne")
-var questionTwo = document.querySelector("#questionTwo")
-var questionThree = document.querySelector("#questionThree")
-var choiceA = document.querySelectorAll(".choiceA")// all A choices
-var choiceB = document.querySelectorAll(".choiceB")// all B choices
-var choiceC = document.querySelectorAll(".choiceC")// all C choices
-var choiceD = document.querySelectorAll(".choiceD")// all D choices
+var startBtn = document.querySelector("#startBtn")// start button access
+var startPage = document.querySelector(".startPage") //page tag
+var questionDiv = document.querySelector("#questionDiv")
+var 
+// var questionTwo = document.querySelector("#questionTwo")
+// var questionThree = document.querySelector("#questionThree")
 var score = 0
 var time = 60
-var timer = document.getElementsByClassName("timer")
+var timer = document.querySelector("#timer")
+currentQuestion = O;
 
 
-//creating key value pars for an allChoices variable
-// var allChoices [
-//     choiceA:choiceA 
-//     choiceB:choiceB
-//     choiceC:choiceC
-//     choiceD:choiceD
-// ]
+
+var questions = [
+ {
+    question: "Place holder text",
+    answer:["HTML", "JavaScript", "CSS" ],
+    corrAnswer: "HTML",
+ }, {
+    question: "What language do you use to ",
+    answer:["HTML", "JavaScript", "CSS" ],
+    corrAnswer: "Javasript",
+ }, {
+    question: "What language do you use to style?",
+    answer:["HTML", "JavaScript", "CSS" ],
+    corrAnswer: "CSS"
+},
+]
 
 //Click event for start button
 startBtn.addEventListener("click", function() {
     startPage.style.display = "none"
-    questionOne.style.display = "block"
+    questionsDiv.style.display = "block"
     setTime()
     scoreDiv.textContent = `Score: ${score}`
 })
@@ -63,15 +57,27 @@ var questions = {
 function displayQuestion(){
     //this might be in my start
     
-    //loopthrough the answers
+
 // pull object through the array
-} /
+var questionObj = questions[questionIndx];
+//display question title
+//loopthrough the answers
+// create a button for each answer
+// check to see if the button created is the right answe
+//creat e custom attribute to show if correct or not
 
-//put an event listener for any button clicked
-//listener should also see if button was correct or not
-// if yes score++ 
-//if no time--
+//append everything to a page
+} 
+function answerCorrect(){
 
+    questionIndx++
+    displayQuestion()
+}
+function answerWrong(){
+
+    questionIndx++
+    displayQuestion()
+}
 function endOfGame(){
 // set all divs style display = none
 //set highscore div to show

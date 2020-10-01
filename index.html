@@ -14,24 +14,50 @@
 </head>
 
 <body>
-    <div id="scoreDiv"></div>
-    <div class="timer"></div>
-    <div class="container">
-        <div class="row">
-            <div>
-                <div class="col-12">
-                <button class="button">Start</button>
-            </div>
-        </div id="questions">
-            <div class="questionOne"></div>
-            <div class="questionTwo"></div>
-            <div class="questionThree"></div>
-        </div>
-        <div style="display:none" class="highScores">
-            <h1>High Scores</h1>
-            <ol class="list"></ol>
-        </div>
 
+    <body>
+        <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <a id="scores" href="pastScores.html">
+                        Past High Scores!
+                    </a>
+                </div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <div id="timer">
+                            Timer:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="hide" class="startPage">
+            <h1>Ready to start? </h1>
+            <h2>To win, finish with the most time left on the clock.</h2>
+            <h2>
+                Oh! Answer accurately, 5 seconds will be deducted for every wrong answer.
+            </h2>
+            <div class="text-center">
+                <button id="startBtn" type="button" class="btn btn-success btn-lg">
+                    Start!!
+                </button>
+            </div>
+        </div>
+        <div id="questionDiv">
+            <h2 id="title"></h2>
+            <div id="choices"></div>
+            <div id="answer"></div>
+        </div>
+        <div id="end-screen" style="display: none;">
+            <h2 id="final-score">
+            </h2>
+            <h2>Enter your initials</h2>
+            <input id="initials" />
+            <button id="save"> Save</button>
+        </div>
         <script src="script.js" />
         </body>
 </html>
