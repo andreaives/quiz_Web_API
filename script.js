@@ -22,15 +22,15 @@ currentQuestion = 0;
 //Create questions, answers, & correct answer
 var questionArr = [
  {
-    question: "Place holder text",
+    question: "Which of these is a standard markup language?",
     answer:["HTML", "JavaScript", "CSS" ],
     corrAnswer: "HTML",
  }, {
-    question: "What language do you use to ",
+    question: "What language is often short-handed to JS? ",
     answer:["HTML", "JavaScript", "CSS" ],
     corrAnswer: "JavaScript",
  }, {
-    question: "What language do you use to style?",
+    question: "What is the main styling language?",
     answer:["HTML", "JavaScript", "CSS" ],
     corrAnswer: "CSS"
 },
@@ -42,8 +42,10 @@ startBtn.addEventListener("click", function() {
     questionDiv.style.display = "block"
     setTime()
     scoreDiv.textContent = `Score: ${score}`
+    console.log()
+    
 })
-
+console.log(startBtn.addEventListener)
 //timer function
 function setTime(){
     var timeInterval = setInterval(function() {
@@ -85,6 +87,7 @@ function answerWrong(){
 function endOfGame(){
     startPage.style.display = "none"
     questionDiv.style.display = "none"
+    endScreen.style.display = "block"
 
 
 
