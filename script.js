@@ -91,31 +91,20 @@ function questionClick(){
         score++
     }
     currentQuestionIndex++;
-    displayQuestion()
+    if (currentQuestionIndex === questionArr.length){
+        endOfGame();
+    }
+    displayQuestion();
 }
 
-// var questionObj = questions[questionIndx];
-//display question title
-//loopthrough the answers
-// create a button for each answer
-// check to see if the button created is the right answe
-//creat e custom attribute to show if correct or not
 
-//append everything to a page
-function answerCorrect(){
 
-    currentQuestionIndex++
-    displayQuestion()
-}
-function answerWrong(){
-
-    
-}
-//setting all divs to display none;
 function endOfGame(){
     startPage.style.display = "none"
     questionDiv.style.display = "none"
     endScreen.style.display = "block"
+    
+    scoreDiv.textcontent = time;
 
 
 
@@ -131,7 +120,15 @@ function endOfGame(){
 
 
 
+// var questionObj = questions[questionIndx];
+//display question title
+//loopthrough the answers
+// create a button for each answer
+// check to see if the button created is the right answe
+//creat e custom attribute to show if correct or not
 
+//append everything to a page
+//setting all divs to display none;
 
 // # 04 Web APIs: Code Quiz
 
