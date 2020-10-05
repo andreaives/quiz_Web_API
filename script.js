@@ -1,21 +1,21 @@
 
 
 // global variables referencing my tags and ids in html
-var startBtn = document.querySelector("#startBtn");// start button access
+var startBtn = document.getElementById("startBtn");// start button access
 var startPage = document.querySelector(".startPage"); //page tag
-var toHidden = document.getElementById("#toHidden");
-var questionDiv = document.querySelector("#questionDiv");
-var questions = document.getElementById("#questions");
-var answers = document.getElementById("#answer");
-var userAnswers = document.getElementById("#userAnswers");
-var endGame = document.getElementById("#end-game");
-var initials = document.getElementById("#initials");
-var finalScore = document.getElementById("final-score")
-var endScreen = document.getElementById("#end-screen")
+var toHidden = document.getElementById("toHidden");
+var questionDiv = document.getElementById("questionDiv");
+
+var answers = document.getElementById("answers");
+var userAnswers = document.getElementById("userAnswers");
+var endGame = document.getElementById("end-game");
+var initials = document.getElementById("initials");
+var scoreDiv = document.getElementById("score")
+var endScreen = document.getElementById("end-screen")
 var score = 0;
 var time = 60;
 var timer = document.querySelector("#timer");
-currentQuestion = 0;
+var currentQuestionIndex = 0;
 
 
 
@@ -23,31 +23,36 @@ currentQuestion = 0;
 var questionArr = [
  {
     question: "Which of these is a standard markup language?",
-    answer:["HTML", "JavaScript", "CSS" ],
+    answer:["HTML", "JS", "CSS" ],
     corrAnswer: "HTML",
  }, {
-    question: "What language is often short-handed to JS? ",
-    answer:["HTML", "JavaScript", "CSS" ],
-    corrAnswer: "JavaScript",
+    question: "What language needs the tag <script>? ",
+    answer:["HTML", "JS", "CSS" ],
+    corrAnswer: "JS",
  }, {
     question: "What is the main styling language?",
-    answer:["HTML", "JavaScript", "CSS" ],
+    answer:["HTML", "JS", "CSS" ],
     corrAnswer: "CSS"
 },
 ]
 
-//Click event for start button
-startBtn.addEventListener("click", function() {
+
+// Click event for start button
+// hide start page move to question div
+startBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("click")
     startPage.style.display = "none"
     questionDiv.style.display = "block"
-    setTime()
+    setTime();
     scoreDiv.textContent = `Score: ${score}`
-    console.log()
+    displayQuestion();
     
 })
-console.log(startBtn.addEventListener)
-//timer function
-function setTime(){
+
+
+    //timer function
+    function setTime(){
     var timeInterval = setInterval(function() {
     time--;
     timer.textContent = `Time Left: ${time}`   
@@ -56,15 +61,39 @@ function setTime(){
         endOfGame()
     }
 }, 1000);
-}
+    }
 
 //get the current question index and displays question and answers on the scrre
 function displayQuestion(){
-    //this might be in my start
-    
+// for (var i=0;i<questionArr.length;i++){
 
-// pull object through the array
-var questionObj = questions[questionIndx];
+    var currQuestion = questionArr[currentQuestionIndex];
+    var allQuestions = document.getElementById("questions");
+    allQuestions.textContent = currQuestion.question;
+    answers.innerHTML = "";
+    currQuestion.answer.forEach(function (answered, i) {
+    var answerBtn = document.createElement("button");
+    answerBtn.setAttribute("class", "answered");
+    answerBtn.setAttribute("value", answered);
+    answerBtn.textContent = i + 1 + ". " + answered;
+    answerBtn.onclick = questionClick;
+    answers.appendChild(answerBtn);
+});
+}
+// }
+function questionClick(){
+    if(this.value !== questionArr[currentQuestionIndex].answer){
+    alert("incorrect!!")
+    time -= 5;
+    currentQuestionIndex--;
+    displayQuestion()
+    }else{
+        alert("Great Job!!")
+        score++
+    }
+}
+
+// var questionObj = questions[questionIndx];
 //display question title
 //loopthrough the answers
 // create a button for each answer
@@ -72,16 +101,14 @@ var questionObj = questions[questionIndx];
 //creat e custom attribute to show if correct or not
 
 //append everything to a page
-} 
 function answerCorrect(){
 
-    questionIndx++
+    currentQuestionIndex++
     displayQuestion()
 }
 function answerWrong(){
 
-    questionIndx++
-    displayQuestion()
+    
 }
 //setting all divs to display none;
 function endOfGame(){
