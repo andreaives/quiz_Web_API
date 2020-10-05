@@ -82,15 +82,16 @@ function displayQuestion(){
 }
 // }
 function questionClick(){
-    if(this.value !== questionArr[currentQuestionIndex].answer){
+    if(this.value !== questionArr[currentQuestionIndex].corrAnswer){
     alert("incorrect!!")
     time -= 5;
-    currentQuestionIndex--;
-    displayQuestion()
+    
     }else{
         alert("Great Job!!")
         score++
     }
+    currentQuestionIndex++;
+    displayQuestion()
 }
 
 // var questionObj = questions[questionIndx];
