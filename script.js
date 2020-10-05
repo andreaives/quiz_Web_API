@@ -103,7 +103,6 @@ function endOfGame(){
     startPage.style.display = "none"
     questionDiv.style.display = "none"
     endScreen.style.display = "block"
-    
     scoreDiv.textcontent = time;
 
 
