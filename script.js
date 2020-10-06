@@ -59,6 +59,8 @@ startBtn.addEventListener("click", function(e) {
     if(time < 1){
         clearInterval(timeInterval)
         endOfGame()
+    } else if(currentQuestionIndex === questionArr.length){
+        clearInterval(timeInterval)
     }
 }, 1000);
     }
@@ -103,7 +105,7 @@ function endOfGame(){
     startPage.style.display = "none"
     questionDiv.style.display = "none"
     endScreen.style.display = "block"
-    scoreDiv.textcontent = time;
+    scoreDiv.textContent = timeInterval;
 
 
 
