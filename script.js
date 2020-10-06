@@ -9,13 +9,16 @@ var questionDiv = document.getElementById("questionDiv");
 var answers = document.getElementById("answers");
 var userAnswers = document.getElementById("userAnswers");
 var endGame = document.getElementById("end-game");
-var initials = document.getElementById("initials");
+
 var scoreDiv = document.getElementById("score")
 var endScreen = document.getElementById("end-screen")
 var score = 0;
 var time = 60;
 var timer = document.querySelector("#timer");
 var currentQuestionIndex = 0;
+var finalTime = localStorage.getItem("time")
+var finalScore = localStorage.getItem("score")
+var saveBtn = document.getElementById("save")
 
 
 
@@ -47,6 +50,7 @@ startBtn.addEventListener("click", function(e) {
     setTime();
     scoreDiv.textContent = `Score: ${score}`
     displayQuestion();
+
     
 })
 
@@ -55,12 +59,15 @@ startBtn.addEventListener("click", function(e) {
     function setTime(){
     var timeInterval = setInterval(function() {
     time--;
-    timer.textContent = `Time Left: ${time}`   
+    timer.textContent = `Time Left: ${time}`  
+    localStorage.getItem("time") 
     if(time < 1){
         clearInterval(timeInterval)
         endOfGame()
     } else if(currentQuestionIndex === questionArr.length){
         clearInterval(timeInterval)
+        localStorage.setItem("time", time)
+        
     }
 }, 1000);
     }
@@ -87,10 +94,11 @@ function questionClick(){
     if(this.value !== questionArr[currentQuestionIndex].corrAnswer){
     alert("incorrect!!")
     time -= 5;
-    
+    localStorage.setItem("time", time)
     }else{
         alert("Great Job!!")
         score++
+        localStorage.setItem("score", score)
     }
     currentQuestionIndex++;
     if (currentQuestionIndex === questionArr.length){
@@ -100,24 +108,30 @@ function questionClick(){
 }
 
 
-
+//hiding all other divs shows endscreen
+//sets ScoreDiv to 
 function endOfGame(){
     startPage.style.display = "none"
     questionDiv.style.display = "none"
     endScreen.style.display = "block"
-    scoreDiv.textContent = timeInterval;
-
-
-
-
+    scoreDiv.textContent = score;
 //set highscore div to show
 // all divs hide timer and score
 //store the score in local storage and then return it to page 
 }
+saveBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    var initials = document.getElementById("initials").value;
+    localStorage.setItem("initials", initials)
+    var initialsStr = JSON.stringify(initials)
+    JSON.parse(initialsStr)
+    highScorePage();
+    
+})
+function highScorePage(){
+    
 
-
-
-
+}
 
 
 
