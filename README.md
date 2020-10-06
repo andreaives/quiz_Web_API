@@ -4,6 +4,11 @@
 This is a coding quiz, designed to prompt users through a timed quiz the length of 3 questions. If the right answer is chosen, their score will increase. if the wrong answer is chosen, 5 sec will be deducted from the countdown timer. The goal is to end the game fast and with he highest correct answers. At the end, users are able to save their score by entering their initials and submitting. Top scores will be shown under the "High Scores!" page at the very end.
 
 ###Usage
+![ScreenShot](/images/img1.jpg)
+![ScreenShot](/images/img2.jpg)
+![ScreenShot](/images/img3.jpg)
+![ScreenShot](/images/img4.jpg)
+![ScreenShot](/images/img5.jpg)
 
 
 ### Technologies used
