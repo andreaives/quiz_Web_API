@@ -119,19 +119,20 @@ function endOfGame(){
 // all divs hide timer and score
 //store the score in local storage and then return it to page 
 }
+
 saveBtn.addEventListener("click", function(e){
     e.preventDefault();
     var initials = document.getElementById("initials").value;
     localStorage.setItem("initials", initials)
-    var initialsStr = JSON.stringify(initials)
-    JSON.parse(initialsStr)
-    highScorePage();
+    // var initialsStr = JSON.stringify(initials)
+    // JSON.parse(initialsStr)
+    // highScorePage();
     
 })
-function highScorePage(){
-    
+// function highScorePage(){
 
-}
+
+// }
 
 
 

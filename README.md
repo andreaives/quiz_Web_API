@@ -25,5 +25,7 @@ A mix of javaScript, JSON, & HTMl. For renders I used Google Chrome. For coding 
 <link src =https://andreaives.github.io/quiz_Web_API/ >
 
 
+[Code quiz](https://andreaives.github.io/quiz_Web_API/)
+
 ###Credits
 The constant support and collaboration I receive from my classmates. Special thanks to Colby! Also my tutor Tyler Bolty who continues to have so much patience with me. My professor, Gary Almes, who pushes us to code, code, code.
