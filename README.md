@@ -22,8 +22,6 @@ A mix of javaScript, JSON, & HTMl. For renders I used Google Chrome. For coding 
 
 
 ### Site Link
-<link src =https://andreaives.github.io/quiz_Web_API/ >
-
 
 [Code quiz](https://andreaives.github.io/quiz_Web_API/)
 
